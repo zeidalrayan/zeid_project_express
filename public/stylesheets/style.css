@@ -1,0 +1,289 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  }
+  body {
+  
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  }
+  
+  a {
+    color: #00B7FF;
+  }
+
+   .box{
+      display: flex;
+      
+      
+  }
+  .kiri1{
+    height:100vh;
+width: 67vh;
+
+}
+  .kiri{
+      height:100vh;
+  width: 60vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  }
+  .kiri img{
+    width: 9rem;
+    display: flex;
+    margin-top: 2rem;
+    
+  }
+  .kiri a{
+    text-decoration: none;
+    color: black;
+    /* border: 2px solid white;
+    padding: 0.7rem; */
+  }
+  .kiri a:hover{
+  
+
+    color: black;
+    transition: 0.5s;
+  }
+  
+  .kanan{
+      background-color: bisque;
+      width: 80%;
+
+  }
+  .button{
+  stroke: none;
+  background-color: #00B7FF;
+  color:aliceblue;
+  border: none;
+  border-radius: 5px; 
+  padding-left: 1rem ;
+  padding-right: 1rem ;
+  height: 20px;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  }
+  
+  .garis{
+    height: 2px;
+    background-color: black;
+    margin-top: 1rem;
+  }
+  
+  .myswiper{
+    width: 600px;
+    height: 400px;
+    
+    object-fit: cover;
+    margin-top: 2rem;
+  }
+
+.jenis1{
+  text-align: center;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+.kotak{
+  width: 80%;
+  display: flex;
+  text-align: center;
+ background-color:aliceblue;
+  padding: 0.8rem;
+  flex-direction: column;
+  border-radius: 10px;
+  
+  gap: 0.5rem;
+}
+.kotak a{
+  color: aliceblue;
+  text-decoration: none;
+}
+.radio{
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+  
+}
+.red{
+  background-color: red;
+
+}
+.green{
+  background-color: green;
+}
+.kotak img{
+  width: 10rem;
+  height: 8rem;
+  object-fit: contain;
+}
+.kotak button{
+  border: none;
+  display:flex ;
+  
+  text-align:center;
+gap: 1rem;
+color: aliceblue; 
+  margin-bottom: 0.5rem;
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+.bt input{
+padding: 0.4rem;
+border: none;
+background-color: #00B7FF;
+border-radius: 5px;
+color: white;
+}
+.tex{
+  margin-left: 2rem;
+  margin-top: 1rem;
+  width: 15%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #00B7FF;
+}
+.pilihan1 {
+   display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 2rem ;
+  
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+ 
+}
+.add{
+  
+  padding: 0.5rem;
+  margin-top: 2rem;
+  font-weight: 600;
+  text-decoration: none;
+
+ 
+  
+}
+.add a{
+  text-decoration: none;
+  color:white;
+  background-color: #00B7FF;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-left: 2rem;
+}
+.swiper-slide img {
+
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+}
+
+.but{
+  display: flex;
+  flex-direction: column;
+}
+.logo  {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 2rem;
+
+}
+.logo img{
+  width: 8rem;
+  object-fit: contain;
+}
+.logo h3{
+  width: 50%;
+  justify-content: center;
+}
+
+
+.kolom{
+  display: flex;
+  gap: 10rem;
+ 
+  margin-left: 2rem;
+  margin-top: 2rem;
+}
+.kolom h3{
+  font-size:24px;
+}
+.img img{
+width: 40rem;
+border-radius: 10px;
+
+}
+.img{
+  display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 2rem;
+margin-bottom: 2rem;
+
+}
+.back{
+  position: absolute;
+  top: 2rem;
+
+  left: 2rem;
+  color: white;
+
+}
+.back input{
+  padding: 0.7rem;
+  border: none;
+  color: white;
+  width: 50%;
+  background-color: #00B7FF;
+  border-radius: 10px;
+}
+
+/* .detail{
+  background-color:#ff8835;
+  color: white;
+  overflow-y: hidden;
+}
+.des{
+  text-align: center;
+  margin-left: 2rem;
+  width: 10%;
+}
+.card{
+  justify-content: center;
+ font-size: 18px;
+ margin-top: -2rem;
+  display: flex;
+
+  padding: 10rem;
+ 
+  
+}
+.te{
+  display: flex;
+font-size: 20px;
+width: 50%;
+
+border: 3px solid #00B7FF;
+  flex-direction: column;
+}
+.des h3{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+} */
+
+.s{
+margin-top: 8%;
+
+}
+.card{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}

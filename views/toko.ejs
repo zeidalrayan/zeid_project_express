@@ -1,0 +1,178 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div class="box">
+
+
+        <div class="kiri bg-info text-center position-fixed">
+            <img src="images/rb.png" alt="">
+            <h3 class="text-light fw-bold">Rabbaani Mart</h3>
+            <button class="btn btn-outline-light active text-black" data-filter="semua makanan"><a href="toko"><i
+                        class="fa-solid fa-bowl-food" style="color: #000000;"></i> <i class="fa-solid fa-wine-glass"
+                        style="color: #000000;"></i> semua
+                    produk</a></button>
+            <button class="btn btn-light text-black" data-filter="makanan"><a href="/makanan"><i
+                        class="fa-solid fa-bowl-food" style="color: #000000;"></i> makanan</a></button>
+            <button class="btn btn-light  text-black" data-filter="minimum"><a href="/minuman"><i
+                        class="fa-solid fa-wine-glass" style="color: #000000;"></i> minuman</a></button>
+
+            <% if (role==='admin' ) { %>
+                <button class="btn btn-danger">
+                    <a href="/logout" class="text-light"><i class="fa-solid fa-door-open" style="color: #ffffff;"></i>
+                        Log out</a>
+                </button>
+                <% } else { %>
+                    <button class="btn btn-success">
+                        <a href="/login" class="text-light"><i class="fa-solid fa-user-pen" style="color: #ffffff;"></i>
+                            Log in</a>
+                    </button>
+                    <% } %>
+
+        </div>
+        <div class="kiri1"></div>
+        <div class="kanan ">
+
+            <% if (role==='admin' ) { %>
+                <p class="text-light tex"> Selamat datang <%= username %>
+                </p>
+
+
+                <div class="garis">
+
+                </div>
+                <% } %>
+
+                    <div class="swiper mySwiper">
+                        <div class="swiper-wrapper loop">
+                            <div class="swiper-slide"><img src="images/1.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="images/3.jpg" alt=""></div>
+                            <div class="swiper-slide"><img src="images/4.jpeg" alt=""></div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <% if (role==='admin' ) { %>
+
+
+                        <div class="add">
+                            <a href="/add-data">+ Tambah data</a>
+                        </div>
+                        <% } %>
+                            <div class="container text-center">
+                                <div class="row">
+                                    <div class="col">
+
+                                    </div>
+                                    <h2 class="jenis1">jualan <%= product %> hari ini</h2>
+                                    <div class="pilihan1">
+                                        <% if (data && data.length) { // Check if 'data' is defined and has a length %>
+                                            <% for (var i=0; i < data.length; i++) { %>
+                                                <div class="kotak">
+                                                    <img src="/images/<%= data[i].gambar %>" alt="<%= data[i].nama %>">
+                                                    <h4 class="fw-bold">
+                                                        <%= data[i].nama %>
+                                                    </h4>
+                                                    <h4>
+                                                        Rp <%= data[i].harga %>
+                                                    </h4>
+                                                    <button class="bg-info"><a href="/detail/<%= data[i].id %>"><i
+                                                                class="fa-solid fa-book-open"
+                                                                style="color: #ffffff;"></i> Lihat
+                                                            Detail</a></button>
+                                                    <% if (role==='admin' ) { %>
+                                                        <button class="bg-success"><a
+                                                                href="/edit-data/<%= data[i].id%>"><i
+                                                                    class="fa-solid fa-pencil"
+                                                                    style="color: #ffffff;"></i> Edit
+                                                                Menu</a></button>
+                                                        <button class="bg-danger"><a
+                                                                onclick="return confirm('apakah kamu yakin?')"
+                                                                href="/toko/delete/<%=data[i].id%>"><i
+                                                                    class="fa-solid fa-trash"
+                                                                    style="color: #ffffff;"></i> Hapus
+                                                                data</a></button>
+                                                        <% } %>
+                                                </div>
+                                                <% } %>
+                                                    <% } else { %>
+                                                        <!-- Handle case where 'data' is not defined or empty -->
+                                                        <p>No data available</p>
+                                                        <% } %>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+        </div>
+
+
+
+        <!-- <h2>Ini adlaah web Admin</h2> -->
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+            integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+        <script>
+            $(document).ready(function () {
+
+
+
+                $('.btn').click(function () {
+                    $(this).addClass('active').siblings().removeClass('active')
+                })
+            })
+
+        </script>
+        <script>
+            var swiper = new Swiper(".mySwiper", {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                centeredSlides: true,
+                autoplay: {
+                    delay: 2500,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+            });
+        </script>
+</body>
+
+</html>

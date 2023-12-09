@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Data Student</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body class="bg-body-tertiary">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>
+                    <%= page %>
+                </h2>
+                <div class="card border-0 shadow rounded">
+                    <div class="card-body py-4">
+                        <form method="post" action="<%= action %>" enctype="multipart/form-data">
+                            <div class="form-group mb-4">
+                                <label class="mb-2" for="nama">nama produk</label>
+                                <input type="text" class="form-control" name="nama" value="<%= nama %>"
+                                    placeholder="masukan nama produk" required>
+                            </div>
+                            <div class="form-group my-2 radio">
+                                <label>Jenis produk </label> <br>
+                                <% if (jenis_produk==='makanan' ) { %>
+                                    <label>
+                                        <input type="radio" name="jenis_produk" value="makanan">
+                                        Makanan
+                                    </label>
+
+                                    <label>
+                                        <input type="radio" name="jenis_produk" value="minuman">
+                                        Minuman
+                                    </label>
+
+                                    <% } else if(jenis_produk==='minuman' ) { %>
+
+                                        <label>
+                                            <input type="radio" name="jenis_produk" value="makanan">
+                                            Makanan
+                                        </label>
+
+                                        <label>
+                                            <input type="radio" name="jenis_produk" value="minuman" checked>
+                                            Minuman
+                                        </label>
+                                        <% }else { %>
+
+                                            <label>
+                                                <input type="radio" name="jenis_produk" value="makanan">
+                                                Makanan
+                                            </label>
+
+                                            <label>
+                                                <input type="radio" name="jenis_produk" value="minuman">
+                                                Minuman
+                                            </label>
+                                            <% } %>
+
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="mb-2" for="harga">harga</label>
+                                <input type="number" class="form-control" name="harga" placeholder="Masukan harga"
+                                    value="<%= harga %>" required>
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="mb-2" for="deskripsi">Description</label>
+                                <input type="text" class="form-control" name="deskripsi" placeholder="isi Deskripsi"
+                                    value="<%= deskripsi %>" required>
+                            </div>
+
+                            <div class="form-group mb-4">
+                                <label for="gambar" class="mb-2">Gambar</label>
+                                <input type="file"
+                                    onchange="document.getElementById('previewImage').src = window.URL.createObjectURL(this.files[0])"
+                                    accept="image/*" class="form-control" name="gambar" value="<%= gambar %>" required>
+                                <img id="previewImage" src="/images/<%= gambar %>" alt="<%= gambar %>" width="100px"
+                                    height="100px">
+                            </div>
+                            <button type="submit" class="btn btn-primary">SIMPAN</button>
+                            <button type="reset" class="btn btn-warning">RESET</button>
+
+                            <div class="btn bt">
+
+                                <input type="button" value="Kembali" onclick="history.go(-1)">
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
