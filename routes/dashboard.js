@@ -229,7 +229,7 @@ router.get("/edit-data/:idData", function (req, res, next) {
       } else {
         res.render("creat", {
           action: `/update/${idData}`,
-          page: "Halaman edit",
+          page: "Halaman tambah menu",
           nama: rows[0].nama,
           harga: rows[0].harga,
           deskripsi: rows[0].deskripsi,
@@ -274,7 +274,7 @@ router.post(
         if (error) {
           req.flash("error", error);
           return res.render("creat", {
-            page: "Halaman edit",
+            page: "Halaman edit menu",
             nama: nama,
             harga: harga,
             deskripsi: deskripsi,
